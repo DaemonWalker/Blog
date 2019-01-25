@@ -16,5 +16,15 @@ namespace Blog.Model
 
         [DataMember]
         public List<string> Tags { get; set; }
+
+        public static implicit operator SummaryModel(BlogModel blog)
+        {
+            return new SummaryModel()
+            {
+                Title = blog.Title,
+                Tags = blog.Tags,
+                Summary = blog.Content.Substring(Math.Min(blog.Content.Length, 20))
+            };
+        }
     }
 }

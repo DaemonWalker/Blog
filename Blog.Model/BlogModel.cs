@@ -17,10 +17,13 @@ namespace Blog.Model
         public DateTime Date { get; set; }
 
         [DataMember]
-        public string Contract { get; set; }
+        public string Content { get; set; }
 
         [DataMember]
         public int Read { get; set; }
+
+        [DataMember]
+        public List<string> Tags { get; set; }
 
     }
 }
